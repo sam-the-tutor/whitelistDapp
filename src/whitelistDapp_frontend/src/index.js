@@ -33,10 +33,6 @@ async function handleAuthenticated() {
   identity = await authClient.getIdentity();
   myPrincipal = await identity._principal.toString();
 
-  // console.log("canister Id:",canisterId)
-  // console.log("myPrincipal : ",myPrincipal);
-  //  console.log("AuthClient : ",authClient);
-
   authenticatedCanister  = createActor(canisterId, {
        agentOptions:{
             identity,
@@ -45,7 +41,7 @@ async function handleAuthenticated() {
      });
 
 
-  document.getElementById("greeting").innerText = `Your Local Internet Identity Principal is :${myPrincipal}`;
+  document.getElementById("greeting").innerText = `Your Internet Identity Principal on the Mainnet is :${myPrincipal}`;
 
   
 }
@@ -58,24 +54,3 @@ window.addEventListener('load', async ()=>{
 
 
 
-
-
-
-
-// document.querySelector("form").addEventListener("submit", async (e) => {
-//   e.preventDefault();
-//   const button = e.target.querySelector("button");
-
-//   const name = document.getElementById("name").value.toString();
-
-//   button.setAttribute("disabled", true);
-
-//   // Interact with foo actor, calling the greet method
-//   const greeting = await whitelistDapp_backend.greet(name);
-
-//   button.removeAttribute("disabled");
-
-//   document.getElementById("greeting").innerText = greeting;
-
-//   return false;
-// });
