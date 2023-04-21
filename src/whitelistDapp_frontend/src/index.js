@@ -41,7 +41,7 @@ async function handleAuthenticated() {
      });
 
 
-  document.getElementById("greeting").innerText = `Your Internet Identity Principal on the Mainnet is :${myPrincipal}`;
+  document.getElementById("greeting").innerText = `Your Local Internet Identity Principal is :${myPrincipal}`;
 
   
 }
